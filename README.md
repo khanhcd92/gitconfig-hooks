@@ -1,28 +1,42 @@
 # gitconfig-hooks
 
-1. Create a global gitconfig folder
+1. Create a global gitconfig folder, then create folder hooks
 ```
+mkdir ~/gitconfig
 mkdir ~/gitconfig/hooks
 ```
 
-2. Copy pre-commit file to path ~/gitconfig/hooks
+Note: 
+- Windows: create gitconfig folder in path C:\User\\<username>
+
+2. Copy file pre-commit to folder gitconfig/hooks from 1
 ```
 cp pre-commit.sh ~/gitconfig/hooks/pre-commit
 ```
-3. Create a folder pre-commit.d in path ~/gitconfig/hooks
+
+Note: 
+- Windows: C:\User\\<username>\gitconfig/hooks
+3. Copy folder pre-commit.d folder to folder gitconfig/hooks from 1
 ```
-mkdir ~/gitconfig/hooks/pre-commit.d
+cp -r pre-commit.d ~/gitconfig/hooks
 ```
-4. Copy git_validation_email.sh file to path ~/gitconfig/hooks/pre-commit.d
-```
-cp pre-commit.d/git_validation_email.sh ~/gitconfig/hooks/pre-commit.d
-```
-5. Give permission execute to pre-commit file
+Note: 
+- Windows: C:\User\<username>\gitconfig\hooks
+
+4. Give permission execute to pre-commit file
 ```
 chmod +x ~/gitconfig/hooks/pre-commit
 ```
-6. Add hook path to git global
+Note:
+- Windows: No need to process this step
+5. Add hook path to git global
 ```
 git config --global core.hooksPath ~/gitconfig/hooks
 ```
-7. Validate with your repository
+
+Note:
+- Windows:
+  ```
+  git config --global core.hooksPath C:\User\<username>\gitconfig\hooks
+  ```
+6. Validate with your repository
