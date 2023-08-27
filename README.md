@@ -1,0 +1,1 @@
+# gitconfig-hooks
